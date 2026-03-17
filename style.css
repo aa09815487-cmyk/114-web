@@ -1,0 +1,44 @@
+/* 整體設定 */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* 標題 */
+h1 {
+    background-color: #4a69bd;
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+/* 清單 */
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 40px;
+}
+
+/* 每個項目 */
+li {
+    margin: 15px 0;
+}
+
+/* 連結變按鈕 */
+a {
+    text-decoration: none;
+    background-color: #6a89cc;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    display: inline-block;
+    font-size: 18px;
+}
+
+/* 滑鼠效果 */
+a:hover {
+    background-color: #4a69bd;
+}
