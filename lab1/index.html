@@ -1,1 +1,92 @@
-lab1
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>抽籤系統</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f0f2f5;
+            text-align: center;
+            padding: 30px;
+        }
+
+        h1 {
+            color: #2f3640;
+        }
+
+        textarea {
+            width: 300px;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: #4a69bd;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1e3799;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #e55039;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🎯 抽籤系統</h1>
+
+    <!-- 輸入名單 -->
+    <p>請輸入名單（每行一個名字）：</p>
+    <textarea id="names" placeholder="例如：&#10;小明&#10;小華&#10;小美"></textarea>
+
+    <br>
+
+    <!-- 按鈕 -->
+    <button onclick="draw()">開始抽籤</button>
+
+    <!-- 顯示結果 -->
+    <div id="result"></div>
+
+    <script>
+        function draw() {
+            // 取得輸入內容
+            let text = document.getElementById("names").value;
+
+            // 分割成陣列（用換行切）
+            let list = text.split("\n");
+
+            // 過濾空白
+            list = list.filter(name => name.trim() !== "");
+
+            // 檢查是否有輸入
+            if (list.length === 0) {
+                document.getElementById("result").innerText = "請先輸入名字！";
+                return;
+            }
+
+            // 隨機抽一個
+            let randomIndex = Math.floor(Math.random() * list.length);
+            let winner = list[randomIndex];
+
+            // 顯示結果
+            document.getElementById("result").innerText = "🎉 抽中：" + winner;
+        }
+    </script>
+
+</body>
+</html>
