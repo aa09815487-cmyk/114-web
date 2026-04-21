@@ -4,7 +4,88 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CSS 練習頁面</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            position: relative;
+            overflow: hidden; /* 避免動畫時超出 */
+        }
+
+        /* 背景動畫容器 */
+        body::before {
+            content: "";
+            position: fixed; /* 固定在背景 */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://cdn2.ettoday.net/images/8152/8152738.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1;
+
+            /* 半透明遮罩 */
+            background-blend-mode: darken;
+            background-color: rgba(0, 0, 0, 0.3);
+
+            /* 動畫 */
+            animation: bgZoom 30s ease-in-out infinite alternate;
+        }
+
+        @keyframes bgZoom {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05); /* 放大5% */
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* 文字置中 */
+        body > * {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* 表格樣式 */
+        #my-table {
+            width: 50%;
+            border-collapse: collapse;
+            margin: 20px auto;
+        }
+
+        #my-table th, #my-table td {
+            border: 1px solid white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        #my-table th {
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .row1 {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .row2 {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 0;
+        }
+    </style>
 </head>
 <body>
     <h1>歡迎來到我的練習頁面</h1>
